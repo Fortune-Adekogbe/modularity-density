@@ -476,7 +476,8 @@ def fine_tuned_clustering_q(G, r=0, normalize=True, evd_method='lanczos',
     c_total = np.zeros(len(G), dtype=int)
 
     # Perform modularity maximization for each connected component in 'G'
-    for gr in nx.connected_component_subgraphs(G):
+    for c in nx.connected_components(G):
+        gr = G.subgraph(c).copy()
         # Nodes of the subgraph 'gr'
         nodes_gr = list(gr)
 

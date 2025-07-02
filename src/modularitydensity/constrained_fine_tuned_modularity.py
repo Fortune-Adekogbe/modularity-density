@@ -439,7 +439,8 @@ def constrained_fine_tuned_clustering_q(G, cluster_size, r=0, normalize=True,
     # Perform modularity maximization for
     # each connected component in 'G', such that the community size is
     # less than the threshold
-    for gr in nx.connected_component_subgraphs(G):
+    for c in nx.connected_components(G):
+        gr = G.subgraph(c).copy()
         # Nodes of the subgraph 'gr'
         nodes_gr = list(gr)
 

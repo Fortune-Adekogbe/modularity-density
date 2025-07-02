@@ -466,7 +466,8 @@ def fine_tuned_clustering_qds(G, normalize=True,
 
     # Perform modularity density maximization for
     # each connected component in 'G'
-    for gr in nx.connected_component_subgraphs(G):
+    for c in nx.connected_components(G):
+        gr = G.subgraph(c).copy()
         # Nodes of the subgraph 'gr'
         nodes_gr = list(gr)
 
