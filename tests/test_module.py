@@ -52,7 +52,7 @@ class Test_all(object):
 
     def setup(self):
         self.G = nx.karate_club_graph()
-        self.adj = nx.to_scipy_sparse_matrix(self.G)
+        self.adj = nx.to_scipy_sparse_array(self.G)
 
     def test_fine_tuned_modularity_density(self):
 

@@ -99,7 +99,7 @@ def modularity_r(adj, c, cluster_labels, r=0, dict_bool=None):
     Examples
     --------
     >>> G = nx.karate_club_graph()
-    >>> adj = nx.to_scipy_sparse_matrix(G)
+    >>> adj = nx.to_scipy_sparse_array(G)
     >>> c = fine_tuned_clustering_q(G)
     >>> c
     array([2, 2, 2, 2, 4, 4, 4, 2, 3, 3, 4, 2, 2, 2, 3, 3, 4, 2, 3, 2, 3, 2,
@@ -447,7 +447,7 @@ def modularity_density(adj, c, cluster_labels,
     Examples
     --------
     >>> G = nx.karate_club_graph()
-    >>> adj = nx.to_scipy_sparse_matrix(G)
+    >>> adj = nx.to_scipy_sparse_array(G)
     >>> c = fine_tuned_clustering_qds(G)
     >>> c
     array([4, 4, 4, 4, 2, 2, 2, 4, 3, 3, 2, 4, 4, 4, 3, 3, 2, 4, 3, 4, 3, 4,
@@ -572,7 +572,7 @@ def mula_modularity_density(adj, c, dict_vec=None):
     Examples
     --------
     >>> G = nx.karate_club_graph()
-    >>> adj = nx.to_scipy_sparse_matrix(G)
+    >>> adj = nx.to_scipy_sparse_array(G)
     >>> c = fine_tuned_clustering_qds(G)
     >>> c
     array([4, 4, 4, 4, 2, 2, 2, 4, 3, 3, 2, 4, 4, 4, 3, 3, 2, 4, 3, 4, 3, 4,

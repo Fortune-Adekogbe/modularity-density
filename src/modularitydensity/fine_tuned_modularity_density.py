@@ -101,7 +101,7 @@ def split_communities_qds(adj, c, normalize, evd_method, tolerence, seed):
         sub_adj = adj[bool_r].T[bool_r]
 
         # Subgraph constructed from sparse adjacency matrix of 'cluster_num'
-        g = nx.from_scipy_sparse_matrix(sub_adj)
+        g = nx.from_scipy_sparse_array(sub_adj)
         # Number of nodes in 'g'
         len_g = len(g)
 
@@ -485,7 +485,7 @@ def fine_tuned_clustering_qds(G, normalize=True,
         merge_size = 0
 
         # Sparse Adjacency matrix of 'gr'
-        adj_gr = nx.to_scipy_sparse_matrix(gr, format='csr')
+        adj_gr = nx.to_scipy_sparse_array(gr, format='csr')
 
         # Iteratively carrying out splitting and merging, alternatively,
         # until neither splitting nor merging of the community structure of

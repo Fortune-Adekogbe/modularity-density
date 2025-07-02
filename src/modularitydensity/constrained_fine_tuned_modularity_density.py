@@ -102,7 +102,7 @@ def forced_split_communities_qds(adj, c, cluster_size, normalize,
         sub_adj = adj[bool_r].T[bool_r]
 
         # Subgraph constructed from sparse adjacency matrix of 'cluster_num'
-        g = nx.from_scipy_sparse_matrix(sub_adj)
+        g = nx.from_scipy_sparse_array(sub_adj)
         # Number of nodes in 'g'
         len_g = len(g)
 
@@ -511,7 +511,7 @@ def constrained_fine_tuned_clustering_qds(G, cluster_size, normalize=True,
         merge_size = 0
 
         # Sparse Adjacency matrix of 'gr'
-        adj_gr = nx.to_scipy_sparse_matrix(gr, format='csr')
+        adj_gr = nx.to_scipy_sparse_array(gr, format='csr')
 
         # Iteratively carrying out splitting and merging, alternatively, until
         # there is no further improvement in modularity densiy, while the

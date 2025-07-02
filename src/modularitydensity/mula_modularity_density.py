@@ -64,7 +64,7 @@ def split_communities_mqds(adj, c, normalize, evd_method, tolerence, seed):
     for cluster_num in unique_clusters:
         bool_r = dict_bool[cluster_num]
         sub_adj = adj[bool_r].T[bool_r]
-        g = nx.from_scipy_sparse_matrix(sub_adj)
+        g = nx.from_scipy_sparse_array(sub_adj)
         connected = nx.is_connected(g)
         len_g = sub_adj.shape[0]
 
@@ -248,7 +248,7 @@ def fine_tuned_clustering_mqds(G, normalize=True,
         c_new = np.zeros(len(nodes_gr), dtype=int)
 
         # Sparse Adjacency matrix of 'gr'
-        adj_gr = nx.to_scipy_sparse_matrix(gr, format='csr')
+        adj_gr = nx.to_scipy_sparse_array(gr, format='csr')
 
         # Iteratively carrying out splitting and merging, alternatively,
         # until neither splitting nor merging of the community structure of
